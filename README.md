@@ -1,24 +1,72 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, unique: true, index|
+|email|string|null: false, unique: true|
+|password|string|null: infalse|
+|incomes|integer|null: false|
+|fixedcosts|integer|null: false|
+|save|integer|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :plans
+- has_many :wishes
+- has_many :records
+- has_one :totals
 
-* Ruby version
 
-* System dependencies
+## plansテーブル
 
-* Configuration
+|Column|Type|Option|
+|------|----|------|
+|month|integer||
+|content|string||
+|cost|integer|null: false|
+|user|references|foreign_key: true|
 
-* Database creation
+### Association
+bolongs_to :user
 
-* Database initialization
 
-* How to run the test suite
+## wishesテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Option|
+|------|----|------|
+|month|integer||
+|content|string||
+|cost|integer|null: false|
+|user|references|foreign_key: true|
 
-* Deployment instructions
+### Association
+bolongs_to :user
 
-* ...
+
+## recordsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|month|integer||
+|content|string||
+|cost|integer|null: false|
+|user|references|foreign_key: true|
+|total|references|foreign_key: true|
+
+### Association
+bolongs_to :user
+belongs_to :total
+
+
+## totalsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|expenses|integer||
+|balance_year|integer||
+|balance_month|integer||
+|record|references|foreign_key: true|
+|user|references|foreign_key: true|
+
+### Association
+has_many :records
+bolongs_to :user
