@@ -26,7 +26,7 @@
 |user|references|foreign_key: true|
 
 ### Association
-bolongs_to :user
+- belongs_to :user
 
 
 ## wishesテーブル
@@ -39,7 +39,7 @@ bolongs_to :user
 |user|references|foreign_key: true|
 
 ### Association
-bolongs_to :user
+- belongs_to :user
 
 
 ## recordsテーブル
@@ -53,8 +53,8 @@ bolongs_to :user
 |total|references|foreign_key: true|
 
 ### Association
-bolongs_to :user
-belongs_to :total
+- belongs_to :user
+- belongs_to :total
 
 
 ## totalsテーブル
@@ -68,5 +68,5 @@ belongs_to :total
 |user|references|foreign_key: true|
 
 ### Association
-has_many :records
-bolongs_to :user
+- has_many :records
+- belongs_to :user
