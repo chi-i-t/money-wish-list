@@ -67,3 +67,6 @@ gem 'sprockets', '3.7.2'
 gem 'devise'
 gem "haml-rails"
 
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
