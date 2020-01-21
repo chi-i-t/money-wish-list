@@ -3,3 +3,4 @@ class RenameSaveColumnToUsers < ActiveRecord::Migration[5.2]
     rename_column :users, :save, :savings
   end
 end
+
