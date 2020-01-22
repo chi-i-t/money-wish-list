@@ -1,0 +1,23 @@
+.side-bar
+  .side-bar__list
+    .side-bar__list--name
+    = current_user.name
+    さま 
+    .side-bar__list--incomes
+    収入
+    = current_user.incomes
+    円
+    .side-bar__list--fixedcosts
+    固定費
+    = current_user.fixedcosts
+    円
+    .side-bar__list--savings
+    貯蓄額
+    = current_user.savings
+    円
+    .side-bar__list--balance
+    残高
+    = @user_balance
+    円
+  .side-bar__btn
+  = link_to '変更', edit_user_registration_path
