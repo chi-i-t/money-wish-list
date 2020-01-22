@@ -4,7 +4,7 @@ class RecordsController < ApplicationController
   
   def index
     @record = Record.new
-    @records = Record.all
+    @records = current_user.records.order("month ASC")
 
     if params[:id].present?
       @record = Record.find(params[:id])
