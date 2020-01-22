@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
   before_action :sign_in_required, only: [:index]
-  before_action :set_plan, only: [:show, :edit, :update, :destroy]
+  before_action :set_plan, only: [:edit, :update, :destroy]
+  
   def index
     @plan = Plan.new
     @plans = Plan.all
@@ -14,11 +15,7 @@ class PlansController < ApplicationController
     @total_cost = current_user.plans.sum(:cost)
     @user_balance = current_user.incomes - (current_user.fixedcosts + current_user.savings)
     @plan_balance = @user_balance - @total_cost
-
     
-
-    
-
   end
 
 
