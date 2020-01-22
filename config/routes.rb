@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root :to => "devise/sessions#new"
   end
   
-  resources :plans, only: [:index, :create, :update, :destroy]
+  resources :records, only: [:index, :create, :update, :destroy]
   resources :wishes, only: [:index, :create, :update, :destroy]
 end
 
