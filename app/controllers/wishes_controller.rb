@@ -2,26 +2,22 @@ class WishesController < ApplicationController
   before_action :set_wish, only: [:show, :edit, :update, :destroy]
   def index
     @wish = Wish.new
-    @wishes = Wish.all
-
+    @wishes = current_user.wishes.order("month ASC")
+    
     if params[:id].present?
       @wish = Wish.find(params[:id])
     else
       @wish = Wish.new
-
     end
 
     @total_cost = current_user.wishes.sum(:cost)
     @user_balance = current_user.incomes - (current_user.fixedcosts + current_user.savings)
     @wish_balance = @user_balance - @total_cost
-  
   end
   
   def create
     Wish.create(wish_params)
-    redirect_to wishes_path
-
-
+    redirect_to wishes_path   
   end
 
   def update

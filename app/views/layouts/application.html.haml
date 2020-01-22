@@ -12,7 +12,8 @@
       .header__title
       Money Wish List
       .header__right
-        = link_to "Wish List へ", wishes_path, class: "header__right--btn"
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+        = link_to_unless_current "Wish List", wishes_path, class: "header__right--btn"
+        = link_to_unless_current "Record List", records_path, class: "header__right--btn"
+        = link_to_unless_current "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
     .wrapper
       = yield
