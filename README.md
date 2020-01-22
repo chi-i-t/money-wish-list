@@ -7,26 +7,26 @@
 |password|string|null: infalse|
 |incomes|integer|null: false|
 |fixedcosts|integer|null: false|
-|save|integer|null: false|
+|savings|integer|null: false|
 
 ### Association
-- has_many :plans
+~~- has_many :plans~~
 - has_many :wishes
 - has_many :records
-- has_one :totals
+~~- has_one :totals~~
 
 
-## plansテーブル
+~~## plansテーブル~~
 
-|Column|Type|Option|
-|------|----|------|
-|month|integer||
-|content|string||
-|cost|integer|null: false|
-|user|references|foreign_key: true|
+~~|Column|Type|Option|~~
+~~|------|----|------|~~
+~~|month|integer||~~
+~~|content|string||~~
+~~|cost|integer|null: false|~~
+~~|user|references|foreign_key: true|~~
 
-### Association
-- belongs_to :user
+~~### Association~~
+~~- belongs_to :user~~
 
 
 ## wishesテーブル
@@ -50,23 +50,23 @@
 |content|string||
 |cost|integer|null: false|
 |user|references|foreign_key: true|
-|total|references|foreign_key: true|
+~~|total|references|foreign_key: true|~~
 
 ### Association
 - belongs_to :user
-- belongs_to :total
+~~- belongs_to :total~~
 
 
-## totalsテーブル
+~~## totalsテーブル~~
 
-|Column|Type|Option|
-|------|----|------|
-|expenses|integer||
-|balance_year|integer||
-|balance_month|integer||
-|record|references|foreign_key: true|
-|user|references|foreign_key: true|
+~~|Column|Type|Option|~~
+~~|------|----|------|~~
+~~|expenses|integer||~~
+~~|balance_year|integer||~~
+~~|balance_month|integer||~~
+~~|record|references|foreign_key: true|~~
+~~|user|references|foreign_key: true|~~
 
-### Association
-- has_many :records
-- belongs_to :user
+~~### Association~~
+~~- has_many :records~~
+~~- belongs_to :user~~
