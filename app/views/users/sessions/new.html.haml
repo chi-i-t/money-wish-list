@@ -1,17 +1,32 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
+.title-container
+  %h1.title-container__title Money Wish List
+  %h2.title-container__subtitle 〜人生１００年時代を生き抜く〜
+  %h3.title-container__message
+    お金のこと考えていますか？
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
+    人生１００年時代、
     %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
+    自分のお金と時間をどう使うか考えてみませんか？
+    %br/
+  
+
+.form-container
+  %h2.form-container__login Log in
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-container__login--email
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .form-container__login--password
+      = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "current-password"
+    .form-container__login--remember
+    - if devise_mapping.rememberable?
+    
       = f.check_box :remember_me
       = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+    -# .form-container__login--button
+    = f.submit "Log in", class: 'login-btn'
+  .form-container__link
+  = render "users/shared/links"
