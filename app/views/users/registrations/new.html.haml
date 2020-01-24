@@ -1,37 +1,58 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :お名前
+.guide-container
+  %h1.guide-container__title Money Wish List
+  %h2.guide-container__subtitle 〜人生１００年時代を生き抜く〜
+  %h3.guide-container__message
+    1年間でどれくらい大きな額のお買い物をしていますか？ 
     %br/
-    = f.text_field :name, autofocus: true
-  .field
-    = f.label :email
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+    .list Record List
     %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
+    大きな額のお買い物をしたら記録しましょう。
     %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :年収
+    １年間であといくら使えるかわかります。
     %br/
-    = f.number_field :incomes
-  .field
-    = f.label :１年間の固定費（生活費等）
     %br/
-    = f.number_field :fixedcosts
-  .field
-    = f.label :１年間の目標貯蓄額
+    .list Wish List
     %br/
-    = f.number_field :savings
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+    ほしい大きなお買い物をリスト化しておきましょう。
+    %br/
+    買う前に予定を立てて、本当に必要なものか考えることができます。
+
+
+.create-container
+  %h2.create-container__signup Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "users/shared/error_messages", resource: resource
+    .create-container__signup--name
+      = f.label :お名前
+      %br/
+      = f.text_field :name, autofocus: true
+    .create-container__signup--email
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .create-container__signup--password
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} 文字以上)
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+    .create-container__signup--password
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .create-container__signup--incomes
+      = f.label :年収
+      %br/
+      = f.number_field :incomes
+    .create-container__signup--fixedcosts
+      = f.label :１年間の固定費（生活費等）
+      %br/
+      = f.number_field :fixedcosts
+    .create-container__signup--savings
+      = f.label :１年間の目標貯蓄額
+      %br/
+      = f.number_field :savings
+    = f.submit "Sign up", class: 'signup-btn'
+  = render "users/shared/links"
