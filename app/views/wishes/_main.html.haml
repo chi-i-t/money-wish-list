@@ -1,43 +1,53 @@
 .main
+  .main__conteiner
+    .main__conteiner--title
+      Wish List
+    .main__conteiner--message 
+      大きな額のお買い物をしたら記録しましょう。
+      %br/
+      １年間であといくら使えるかわかります。
   .main__form
-  = form_for @wish do |f|
-    .main__form--month
-    希望月を入力してください。<br>
-    = f.number_field :month, min: 1, max: 12
-    .main__form--content
-    希望を入力してください。<br>
-    = f.text_field :content
-    .main__form--cost
-    予定金額を入力してください。<br>
-    = f.number_field :cost
-    = f.submit '登録', class: 'submit-btn'
+    = form_for @wish do |f|
+      .main__form--month
+        希望月を入力してください。<br>
+        = f.number_field :month, min: 1, max: 12
+        月
+      .main__form--content
+        希望を入力してください。<br>
+        = f.text_field :content
+      .main__form--cost
+        予定金額を入力してください。<br>
+        = f.number_field :cost
+        円
+      = f.submit '登録', class: 'submit-btn'
 
   .main__lists
     .main__list
-    %table
-      %thead
-        %tr
-          %th 希望月
-          %th 希望
-          %th 予定金額
-          -# %th{:colspan => "3"}
-      %tbody
-        -@wishes.each do |wish|
+      %table
+        %thead
           %tr
-            %td= wish.month
-            %td= wish.content
-            %td= wish.cost
-            %td= link_to '変更', wishes_path(id: wish.id)
+            %th.head-month 希望月
+            %th.head-text 希望
+            %th.head-cost 予定金額
+            -# %th{:colspan => "3"}
+        %tbody
+          -@wishes.each do |wish|
+            %tr
+              %td.body-month= wish.month
+              %td.body-text= wish.content
+              %td.body-cost= wish.cost
+              %td= link_to '変更', wishes_path(id: wish.id), class:'edit-btn'
 
-            %td= link_to '削除', wish, method: :delete
+              %td= link_to '削除', wish, method: :delete, class:'delete-btn'
 
-.footer__left
-  .footer__left--balance
-  予定残高
-  = @wish_balance
-  円
-.footer__right
-  .footer__right--total
-  予定合計
-  = @total_cost
-  円
+.footer
+  .footer__left
+    .footer__left--total
+      予定合計
+      = @total_cost
+      円
+  .footer__right
+    .footer__right--balance
+      予定残高
+      = @wish_balance
+      円

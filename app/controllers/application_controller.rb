@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   
   def after_sign_in_path_for(resource)
-    wishes_path
+    '/wishes'
   end
 
   before_action :configure_permitted_parameters, if: :devise_controller?
