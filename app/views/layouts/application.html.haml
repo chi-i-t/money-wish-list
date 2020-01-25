@@ -7,14 +7,13 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet"
+    %link{href: "https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700", rel: "stylesheet"}/
   %body
     %header.header
-      .header__title
-      Money Wish List
+      .header__title Money Wish List
       .header__right
         = link_to_unless_current "Wish List", wishes_path, class: "header__right--btn"
         = link_to_unless_current "Record List", records_path, class: "header__right--btn"
         = link_to_unless_current "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
-    .wrapper
-      = yield
+    
+    = yield

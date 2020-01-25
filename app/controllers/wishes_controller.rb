@@ -17,12 +17,12 @@ class WishesController < ApplicationController
   
   def create
     Wish.create(wish_params)
-    redirect_to wishes_path   
+    redirect_to wishes_path
   end
 
   def update
     @wish.update(wish_params)
-    redirect_to request.referer
+    redirect_to wishes_path
   end
   
   def destroy
