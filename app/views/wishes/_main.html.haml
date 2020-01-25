@@ -3,9 +3,9 @@
     .main__conteiner--title
       Wish List
     .main__conteiner--message 
-      大きな額のお買い物をしたら記録しましょう。
+      欲しいお買い物のリストを作っておきましょう。
       %br/
-      １年間であといくら使えるかわかります。
+      買う前に予定を立てて、本当に必要なものか考えることができます。
   .main__form
     = form_for @wish do |f|
       .main__form--month
@@ -37,7 +37,6 @@
               %td.body-text= wish.content
               %td.body-cost= wish.cost
               %td= link_to '変更', wishes_path(id: wish.id), class:'edit-btn'
-
               %td= link_to '削除', wish, method: :delete, class:'delete-btn'
 
 .footer

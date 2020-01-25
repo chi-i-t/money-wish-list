@@ -1,46 +1,54 @@
 .main
+  .main__conteiner
+    .main__conteiner--title
+      Record List
+    .main__conteiner--message 
+      大きな額のお買い物をしたら記録しましょう。
+      %br/
+      １年間であといくら使えるかわかります。
   .main__form
-  = form_for @record do |f|
-    .main__form--month
-    月を入力してください。<br>
-    = f.number_field :month, min: 1, max: 12
-    .main__form--content
-    支出項目を入力してください。<br>
-    = f.text_field :content
-    .main__form--cost
-    支出金額を入力してください。<br>
-    = f.number_field :cost
-    = f.submit '登録', class: 'submit-btn'
+    = form_for @record do |f|
+      .main__form--month
+        購入月を入力してください。<br>
+        = f.number_field :month, min: 1, max: 12
+        月
+      .main__form--content
+        購入したものを入力してください。<br>
+        = f.text_field :content
+      .main__form--cost
+        購入金額を入力してください。<br>
+        = f.number_field :cost
+        円
+      = f.submit '登録', class: 'submit-btn'
 
   .main__lists
     .main__list
-    %table
-      %thead
-        %tr
-          %th 月
-          %th 支出
-          %th 支出金額
-          -# %th{:colspan => "3"}
-      %tbody
-        -@records.each do |record|
+      %table
+        %thead
           %tr
-            %td= record.month
-            %td= record.content
-            %td= record.cost
-            %td= link_to '変更', records_path(id: record.id)
+            %th.record-month 月
+            %th.record-text 支出
+            %th.record-cost 支出金額
+            -# %th{:colspan => "3"}
+        %tbody
+          -@records.each do |record|
+            %tr
+              %td.body-month= record.month
+              %td.body-text= record.content
+              %td.body.cost= record.cost
+              %td= link_to '変更', records_path(id: record.id), class:'edit-btn'
+              %td= link_to '削除', record, method: :delete, class:'delete-btn'
 
-            %td= link_to '削除', record, method: :delete
-
-.footer
+.record-footer
   .footer__left
-    .footer__left--balance
-    支出金額残高
-    = @record_balance
-    円
+    .footer__left--total
+      支出金額合計
+      = @total_cost
+      円
   .footer__right
-    .footer__right--total
-    支出金額合計
-    = @total_cost
-    円
+    .footer__right--balance
+      支出金額残高
+      = @record_balance
+      円
 
  
