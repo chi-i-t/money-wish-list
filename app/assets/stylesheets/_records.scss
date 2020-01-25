@@ -1,33 +1,3 @@
-body{
-  color:  rgb(173, 171, 171);
-}
-header.header{
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 80px;
-}
-.header__title{
-  margin-left: 100px;
-  line-height: 80px;
-  font-size: 2rem;
-  float: left;
-}
-.header__right{
-  float: right;
-  line-height: 80px;
-  margin-right: 100px;
-  &--btn{
-    padding-left: 20px;
-    padding-right: 20px;
-    text-decoration: none;
-    color: rgb(111, 111, 197);
-    font-size: 1.2rem;
-  }
-}
-
 .side-bar{
   width: 20%;
   height: calc(100vh - 80px);
@@ -64,7 +34,6 @@ header.header{
   border-radius: 5px; 
 }
 
-
 .main{
   width: 80%;
   height: calc(100vh - 80px);
@@ -96,21 +65,21 @@ header.header{
  }
 }
 
-.edit_wish{
+.edit_record{
   display: flex;
 }
-.new_wish{
+.new_record{
   display: flex;
 }
-#wish_month{
+#record_month{
   width: 50px;
   height: 40px;
 }
-#wish_content{
+#record_content{
   width: 200px;
   height: 40px;
 }
-#wish_cost{
+#record_cost{
   width: 100px;
   height: 40px;
 }
@@ -146,8 +115,9 @@ table td {
 table th {
   font-size: .85em;
 }
-table thead tr{
-  background-color: #167F92;
+// table thead tr{
+.record-month, .record-text, .record-cost{
+  background-color: rgb(223, 130, 9);
   color:#fff;
 }
 .edit-btn,.delete-btn{
@@ -155,8 +125,9 @@ table thead tr{
   color: rgb(111, 111, 197);
 }
 
-.footer{
-  background-color: #78bbc7;
+
+.record-footer{
+  background-color: rgb(247, 163, 53);
   position: fixed;
   bottom: 0px;
   right: 0px;

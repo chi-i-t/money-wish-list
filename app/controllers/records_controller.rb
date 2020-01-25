@@ -27,7 +27,7 @@ class RecordsController < ApplicationController
 
   def update
     @record.update(record_params)
-    redirect_to request.referer
+    redirect_to records_path
   end
 
   def destroy
