@@ -58,28 +58,28 @@ h2.form-container__login{
 .form-container__login--email{
   padding-bottom: 30px;
 }
-// .form-container__login--button{
-  // width: 400px;
-  // height: 40px;
-  // margin-top: 10px;
-// }
-.login-btn{
-  display:block;
+.login-btn {
+  -webkit-appearance: none;
   width: 200px;
   height: 40px;
-  margin: 10px 0 10px 100px;
+  margin-top: 20px;
+  margin-left: 80px;
+  color: rgb(111, 111, 197);
+  background-color: #e6f2f5;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .new-btn{
   display: block;
   text-decoration: none;
-  margin: 50px 0 0 100px;
+  margin: 30px 0 0 120px;
   color: rgb(111, 111, 197);
 }
 .forget-btn{
   display: block;
   text-decoration: none;
-  margin: 50px 0 0 100px;
+  margin: 30px 0 0 120px;
   color:  rgb(111, 111, 197);
 }
 

@@ -1,48 +1,70 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
+.guide-container
+  %h1.guide-container__title Money Wish List
+  %h2.guide-container__subtitle 〜人生１００年時代を生き抜く〜
+  %h3.guide-container__message
+    1年間でどれくらい大きな額のお買い物をしていますか？ 
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i （変更する場合は入力して下さい。）
     %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
+    .list Record List
+    %br/
+    大きな額のお買い物をしたら記録しましょう。
+    %br/
+    １年間であといくら使えるかわかります。
+    %br/
+    %br/
+    .list Wish List
+    %br/
+    ほしい大きなお買い物をリスト化しておきましょう。
+    %br/
+    買う前に予定を立てて、本当に必要なものか考えることができます。
+
+
+
+.create-container
+  %h2.create-container__edit アカウントを変更 
+  -# #{resource_name.to_s.humanize}
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .create-container__edit--email
+      = f.label :email
       %br/
-      %em
-        = @minimum_password_length
-        文字以上
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i （変更を確認するには現在のパスワードが必要です。）
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .field
-    = f.label :年収
-    %br/
-    = f.number_field :incomes
-    .field
-    = f.label :１年間の固定費（生活費等）
-    %br/
-    = f.number_field :fixedcosts
-  .field
-    = f.label :１年間の目標貯蓄額
-    %br/
-    = f.number_field :savings
-  .actions
-    = f.submit "Update"
-%h3 アカウントをキャンセルしても
-%p
-  よろしいですか? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .create-container__edit--passward
+      = f.label :password
+      %i （変更する場合は入力して下さい。）
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+      - if @minimum_password_length
+        %br/
+        %em
+          = @minimum_password_length
+          文字以上
+    .create-container__edit--passward
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .create-container__edit--passward
+      = f.label :current_password
+      %i （変更を確認するには現在のパスワードが必要です。）
+      %br/
+      = f.password_field :current_password, autocomplete: "current-password"
+    .create-container__edit--incomes
+      = f.label :年収
+      %br/
+      = f.number_field :incomes
+    .create-container__edit--fixedcosts
+      = f.label :１年間の固定費（生活費等）
+      %br/
+      = f.number_field :fixedcosts
+    .create-container__signup--savings
+      = f.label :１年間の目標貯蓄額
+      %br/
+      = f.number_field :savings
+    = f.submit "Update", class:'update-btn'
+  .action
+    = link_to "Back", :back, class:'back'
+    %h3.cancel 退会してもよろしいですか? #{button_to "退会", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:'delete-btn'}
+    
