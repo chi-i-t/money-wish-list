@@ -17,6 +17,17 @@ class WishesController < ApplicationController
   
   def create
     Wish.create(wish_params)
+    # @wish = Wish.create(wish_params)
+    # if @wish.save
+      # respond_to do |format|
+        # format.json
+        # redirect_to wishes_path
+      # end
+    # else
+      # flash.now[:alert] = 'メッセージを入力してください'
+      # render :index 
+    # end
+
     redirect_to wishes_path
   end
 
