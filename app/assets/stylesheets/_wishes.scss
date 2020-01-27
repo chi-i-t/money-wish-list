@@ -42,14 +42,13 @@ header.header{
       padding-bottom: 50px;
     }
     &--incomes, &--fixedcosts, &--savings, &--balance{
-      padding-bottom: 30px;
-    }
+      display: flex;
+      justify-content: space-between;
+    }    
   }
-  &__btn{
-    padding-left: 80px;
-    font-size: 1.2em;
+  
   } 
-}
+
 .side-btn{
   -webkit-appearance: none;
   display: inline-block;
@@ -60,9 +59,11 @@ header.header{
   line-height: 40px;
   text-align: center;
   color: #6f6fc5;
-  margin-left: 50px;
+  margin-left: 80px;
   border-radius: 5px; 
 }
+
+
 
 
 .main{
@@ -107,11 +108,11 @@ header.header{
   height: 40px;
 }
 #wish_content{
-  width: 200px;
+  width: 250px;
   height: 40px;
 }
 #wish_cost{
-  width: 100px;
+  width: 200px;
   height: 40px;
 }
 .submit-btn{
@@ -145,14 +146,32 @@ table td {
 }
 table th {
   font-size: .85em;
-}
-table thead tr{
-  background-color: #167F92;
-  color:#fff;
+  text-align: center;
 }
 .edit-btn,.delete-btn{
   text-decoration: none;
   color: rgb(111, 111, 197);
+}
+
+
+.head-month {
+  width: 100px;
+}
+.head-text {
+  width: 280px;
+}
+.body-month {
+  text-align: right;
+  padding-right: 20px;
+}
+.body-text {
+  padding-left: 20px;
+}
+.body-cost{
+  text-align: right;
+}
+.table-btn{
+  text-align: center;
 }
 
 .footer{
@@ -161,23 +180,16 @@ table thead tr{
   bottom: 0px;
   right: 0px;
   display: flex;
+  justify-content: space-between;
   width: calc(100% - 20%);
   height: 70px;
   color: black;
+  line-height: 70px;
+  font-size: 1.2rem;
   &__left{
-    width: 50%;
-    &--total{
-      text-align: center;
-      line-height: 70px;
-      font-size: 1.2rem;
-    }
+    margin-left: 100px;
   }
-  &__right{
-    width: 50%;
-    &--balance{
-      text-align: center;
-      line-height: 70px;
-      font-size: 1.2rem;
-    }
+  &__money{
+    margin-right: 120px;
   }
 }
