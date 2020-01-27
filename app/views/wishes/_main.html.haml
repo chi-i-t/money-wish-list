@@ -9,15 +9,15 @@
   .main__form
     = form_for @wish do |f|
       .main__form--month
-        希望月を入力してください。<br>
+        予定月を入力してください。<br>
         = f.number_field :month, min: 1, max: 12
         月
       .main__form--content
-        希望を入力してください。<br>
+        欲しいものを入力してください。<br>
         = f.text_field :content
       .main__form--cost
         予定金額を入力してください。<br>
-        = f.number_field :cost
+        = f.text_field :cost
         円
       = f.submit '登録', class: 'submit-btn'
 
@@ -26,8 +26,8 @@
       %table
         %thead
           %tr
-            %th.head-month 希望月
-            %th.head-text 希望
+            %th.head-month 予定月
+            %th.head-text 欲しいもの
             %th.head-cost 予定金額
             -# %th{:colspan => "3"}
         %tbody
@@ -35,18 +35,12 @@
             %tr
               %td.body-month= wish.month
               %td.body-text= wish.content
-              %td.body-cost= wish.cost
-              %td= link_to '変更', wishes_path(id: wish.id), class:'edit-btn'
-              %td= link_to '削除', wish, method: :delete, class:'delete-btn'
+              %td.body-cost= converting_to_jpy(wish.cost)
+              %td.table-btn= link_to '変更', wishes_path(id: wish.id), class:'edit-btn'
+              %td.table-btn= link_to '削除', wish, method: :delete, class:'delete-btn'
 
 .footer
-  .footer__left
-    .footer__left--total
-      予定合計
-      = @total_cost
-      円
-  .footer__right
-    .footer__right--balance
-      予定残高
-      = @wish_balance
-      円
+  .footer__left 予定合計
+  .footer__money= converting_to_jpy(@total_cost)
+  .footer__right 予定残高
+  .footer__money= converting_to_jpy(@wish_balance)
