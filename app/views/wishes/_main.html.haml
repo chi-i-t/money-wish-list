@@ -7,6 +7,7 @@
       %br/
       買う前に予定を立てて、本当に必要なものか考えることができます。
   .main__form
+  
     = form_for @wish do |f|
       .main__form--month
         予定月を入力してください。<br>
@@ -19,7 +20,20 @@
         予定金額を入力してください。<br>
         = f.text_field :cost
         円
-      = f.submit '登録', class: 'submit-btn'
+      -# #user-modal
+      -# = f.submit '登録', class: 'submit-btn'
+      -# = f.submit '登録', remote: true, class: "btn btn-lg, btn-primary" 
+      
+
+
+      .container.text-center
+        %button.btn.btn-primary.mt-5{"data-target" => "#post", "data-toggle" => "modal", type: "button"} 登録
+        #post.modal.fade{"aria-hidden" => "true", role: "dialog", tabindex: "-1"}
+          .modal-dialog{role: "document"}
+          .modal-content
+            ああああああ
+          %button.btn.btn-secondary{"data-dismiss" => "modal", type: "button"} 取消
+          = f.submit "登録", class: "btn btn-primary"
 
   .main__lists
     .main__list
