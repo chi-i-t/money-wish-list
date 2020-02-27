@@ -13,6 +13,9 @@ class WishesController < ApplicationController
     @total_cost = current_user.wishes.sum(:cost)
     @user_balance = current_user.incomes - (current_user.fixedcosts + current_user.savings)
     @wish_balance = @user_balance - @total_cost
+
+    ids = Message.pluck(:id)
+    @message = Message.find(ids.sample)
   end
   
   def create
