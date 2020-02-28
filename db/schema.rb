@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_044603) do
+ActiveRecord::Schema.define(version: 2020_02_27_095942) do
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "month"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_044603) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "advice_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
