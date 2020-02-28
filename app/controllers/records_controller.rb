@@ -15,6 +15,9 @@ class RecordsController < ApplicationController
     @total_cost = current_user.records.sum(:cost)
     @user_balance = current_user.incomes - (current_user.fixedcosts + current_user.savings)
     @record_balance = @user_balance - @total_cost
+
+    ids = Advice.pluck(:id)
+    @advice = Advice.find(ids.sample)
     
   end
 

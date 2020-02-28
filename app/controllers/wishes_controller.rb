@@ -1,5 +1,5 @@
 class WishesController < ApplicationController
-  before_action :set_wish, only: [:show, :edit, :update, :destroy]
+  before_action :set_wish, only: [:edit, :update, :destroy]
   def index
     @wish = Wish.new
     @wishes = current_user.wishes.order("month ASC")
@@ -13,10 +13,14 @@ class WishesController < ApplicationController
     @total_cost = current_user.wishes.sum(:cost)
     @user_balance = current_user.incomes - (current_user.fixedcosts + current_user.savings)
     @wish_balance = @user_balance - @total_cost
+
+    ids = Message.pluck(:id)
+    @message = Message.find(ids.sample)
   end
   
   def create
     Wish.create(wish_params)
+    
     # @wish = Wish.create(wish_params)
     # if @wish.save
       # respond_to do |format|
@@ -30,6 +34,21 @@ class WishesController < ApplicationController
 
     redirect_to wishes_path
   end
+
+  # def show
+  #   @wish = Wish.new
+  #   @wishes = current_user.wishes.order("month ASC")
+    
+  #   if params[:id].present?
+  #     @wish = Wish.find(params[:id])
+  #   else
+  #     @wish = Wish.new
+  #   end
+
+  #   @total_cost = current_user.wishes.sum(:cost)
+  #   @user_balance = current_user.incomes - (current_user.fixedcosts + current_user.savings)
+  #   @wish_balance = @user_balance - @total_cost
+  # end
 
   def update
     @wish.update(wish_params)

@@ -19,7 +19,21 @@
         購入金額を入力してください。<br>
         = f.number_field :cost
         円
-      = f.submit '登録', class: 'submit-btn'
+
+      .container.text-center
+        %button.btn.btn-info{"data-target" => "#post", "data-toggle" => "modal", type: "button"} 登録
+        #post.modal.fade{"aria-hidden" => "true", role: "dialog", tabindex: "-1"}
+          .modal-dialog{role: "document"}
+            .modal-content
+              .modal-content__label
+                貯蓄マメ知識
+              .modal-content__title
+                = @advice.title
+              .modal-content__text
+                = @advice.text
+              .modal-content__btn
+                %button.btn.btn-secondary.btn-lg{"data-dismiss" => "modal", type: "button"} 取消
+                = f.submit "登録", class: "btn btn-danger btn-lg"
 
   .main__lists
     .main__list
