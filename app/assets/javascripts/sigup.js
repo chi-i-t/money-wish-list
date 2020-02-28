@@ -8,3 +8,15 @@ $(function(){
       return false;
   });
 });
+
+$(function(){
+  $('.js-modal-calculator-open').on('click',function(){
+    $('.js-modal-calculator').fadeIn();
+    return false;
+  });
+  $('.js-modal-calculator-close').on('click',function(){
+    $('.js-modal-calculator').fadeOut();
+    return false;
+  });
+});
+
