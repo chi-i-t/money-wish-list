@@ -1,0 +1,52 @@
+.model-calculator
+  %a.js-modal-calculator-open{href: ""} 電卓を使う
+.modal.js-modal-calculator
+  .modal__bg.js-modal-calculator-close
+  .modal__content
+    %form{name: "myForm"}
+      %table.calculator-table
+        %tr
+          %td{align: "center", colspan: "4"}
+            %strong 電  卓
+        %tr
+          %td{colspan: "3"}
+            %input.calculator-result{name: "myLine", size: "12", type: "text", value: "0"}/
+          %td{align: "center"}
+            %input{onclick: "myC()", type: "button", value: "Ｃ"}/
+        %tr
+          %td{align: "center"}
+            %input{onclick: "myValue(7)", type: "button", value: " ７ "}/
+          %td{align: "center"}
+            %input{onclick: "myValue(8)", type: "button", value: " ８ "}/
+          %td{align: "center"}
+            %input{onclick: "myValue(9)", type: "button", value: " ９ "}/
+          %td{align: "center"}
+            %input{onclick: "myCalculate('/')", type: "button", value: "÷"}/
+        %tr
+          %td{align: "center"}
+            %input{onclick: "myValue(4)", type: "button", value: " ４ "}/
+          %td{align: "center"}
+            %input{onclick: "myValue(5)", type: "button", value: " ５ "}/
+          %td{align: "center"}
+            %input{onclick: "myValue(6)", type: "button", value: " ６ "}/
+          %td{align: "center"}
+            %input{onclick: "myCalculate('*')", type: "button", value: "×"}/
+        %tr
+          %td{align: "center"}
+            %input{onclick: "myValue(1)", type: "button", value: " １ "}/
+          %td{align: "center"}
+            %input{onclick: "myValue(2)", type: "button", value: " ２ "}/
+          %td{align: "center"}
+            %input{onclick: "myValue(3)", type: "button", value: " ３ "}/
+          %td{align: "center"}
+            %input{onclick: "myCalculate('-')", type: "button", value: "－"}/
+        %tr
+          %td{align: "center"}
+            %input{onclick: "myValue(0)", type: "button", value: " ０ "}/
+          %td{align: "center"}
+            %input{onclick: "myValue('.')", type: "button", value: " ・ "}/
+          %td{align: "center"}
+            %input{onclick: "myCalculate('+')", type: "button", value: " ＋ "}/
+          %td{align: "center"}
+            %input{onclick: "myCalculate('=')", type: "button", value: "＝"}/
+    %a.js-modal-calculator-close#close{href: ""} 閉じる
