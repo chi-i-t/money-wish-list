@@ -47,52 +47,22 @@
       = f.label :年収
       %br/
       = f.number_field :incomes
-
+    .create-container__signup--savings
+      = f.label :１年間の目標貯蓄額
+      %br/
+      = f.number_field :savings
     .fixedcosts
       .create-container__signup--fixedcosts
         = f.label :１年間の固定費（生活費等）
         %br/
         = f.number_field :fixedcosts
-    
+        = f.submit "Sign up", class: 'signup-btn'
+        = render "users/shared/links"
 
-      .model  
-        %a.js-modal-open{href: ""} こちらで年代別の平均生活費を見る
-      .modal.js-modal
-        .modal__bg.js-modal-close
-        .modal__content
-          %p 世帯主の年代別年間消費支出
-          %p ※こちらはあくまでも目安です。
-          %table.spending-table
-            %tbody
-              %tr
-                %td.age ２０代
-                %td.spending 2,757,600円
-              %tr
-                %td.age ３０代
-                %td.spending 3,117,600円
-              %tr
-                %td.age ４０代
-                %td.spending 3,835,200円
-              %tr
-                %td.age ５０代
-                %td.spending 4,292,400円
-              %tr
-                %td.age ６０代 
-                %td.spending 3,716,400円
-              %tr
-                %td.age ７０代
-                %td.spending 3,366,000円
-          %p 総務省「家計調査年報」／2017年
-          
-          %a.js-modal-close#close{href: ""} 閉じる
-      
-      = render "calculator"
-      
-    .create-container__signup--savings
-      = f.label :１年間の目標貯蓄額
-      %br/
-      = f.number_field :savings
-    -# .action
-    = f.submit "Sign up", class: 'signup-btn'
-    -# = link_to "Sign up", "/wishes/:id", class: 'signup-btn'
-    = render "users/shared/links"
+  = render "average"  
+    
+  = render "calculator"
+  
+  
+
+
