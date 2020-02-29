@@ -68,8 +68,8 @@ gem "haml-rails"
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 gem 'ar_strip_commas'
 
