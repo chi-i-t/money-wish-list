@@ -45,7 +45,7 @@ h3.guide-container__message{
 .create-container{
   width: 50%;
   height: 100%;
-  padding: 100px 0 0 50px;
+  padding: 50px 0 0 50px;
   &__signup{
   font-size: 2rem;
   margin-bottom: 10px;
@@ -162,4 +162,8 @@ h3.guide-container__message{
   text-align: right;
   padding: 8px;
   font-size: 1.5rem;
+}
+
+.btn-container{
+  display: flex;
 }

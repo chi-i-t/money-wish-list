@@ -47,22 +47,27 @@
       = f.label :年収
       %br/
       = f.number_field :incomes
+      -# = f.text_field :incomes, class: "numberbox"
+      円
+
     .create-container__signup--savings
       = f.label :１年間の目標貯蓄額
       %br/
       = f.number_field :savings
+      円
     .fixedcosts
       .create-container__signup--fixedcosts
         = f.label :１年間の固定費（生活費等）
-        %br/
         = f.number_field :fixedcosts
+        円
         = f.submit "Sign up", class: 'signup-btn'
-        = render "users/shared/links"
-
+       
   = render "average"  
     
   = render "calculator"
   
+  = render "users/shared/links"
+
   
 
 
