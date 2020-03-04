@@ -1,27 +1,7 @@
-.guide-container
-  %h1.guide-container__title Money Wish List
-  %h2.guide-container__subtitle 〜人生１００年時代を生き抜く〜
-  %h3.guide-container__message
-    1年間でどれくらい大きな額のお買い物をしていますか？ 
-    %br/
-    %br/
-    .list Record List
-    %br/
-    大きな額のお買い物をしたら記録しましょう。
-    %br/
-    １年間であといくら使えるかわかります。
-    %br/
-    %br/
-    %br/
-    .list Wish List
-    %br/
-    ほしい大きなお買い物をリスト化しておきましょう。
-    %br/
-    買う前に予定を立てて、本当に必要なものか考えることができます。
-
+= render "guide"
 
 .create-container
-  %h2.create-container__signup Sign up
+  .create-container__signup Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "users/shared/error_messages", resource: resource
     .create-container__signup--name

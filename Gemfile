@@ -74,3 +74,6 @@ gem 'jquery-rails'
 gem 'ar_strip_commas'
 
 gem 'active_hash'
+
+gem "chartkick"
+gem 'chartable'

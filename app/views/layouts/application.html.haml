@@ -14,6 +14,7 @@
       .header__right
         = link_to_unless_current "Wish List", wishes_path, class: "header__right--btn"
         = link_to_unless_current "Record List", records_path, class: "header__right--btn"
+        = link_to_unless_current "Record chart", user_path(current_user.id), class: "header__right--btn"
         = link_to_unless_current "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
     
     = yield
