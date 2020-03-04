@@ -1,7 +1,7 @@
 .title-container
-  %h1.title-container__title Money Wish List
-  %h2.title-container__subtitle 〜人生１００年時代を生き抜く〜
-  %h3.title-container__message
+  .title-container__title Money Wish List
+  .title-container__subtitle 〜人生１００年時代を生き抜く〜
+  .title-container__message
     お金のこと考えていますか？
     %br/
     人生１００年時代、
@@ -11,7 +11,7 @@
   
 
 .form-container
-  %h2.form-container__login Log in
+  .form-container__login Log in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-container__login--email
       = f.label :email

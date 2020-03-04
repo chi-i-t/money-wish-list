@@ -53,9 +53,6 @@
               %td.table-btn= link_to '変更', records_path(id: record.id), class:'edit-btn'
               %td.table-btn= link_to '削除', record, method: :delete, class:'delete-btn'
 
-.record-footer
-  .footer__left 購入金額合計
-  .footer__money= converting_to_jpy(@total_cost)
-  .footer__right 残高
-  .footer__money= converting_to_jpy(@record_balance)
+= render "footer"
+  
  

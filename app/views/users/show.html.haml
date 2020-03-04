@@ -1,0 +1,15 @@
+.wrapper
+  = render "wishes/side_bar"
+
+  .main
+    .main__conteiner
+      .main__conteiner--title
+        Record Chart
+      .main__conteiner--message 
+        購入したもののグラフです。
+        %br/
+        不要なもの、衝動買いしてしまったものはありませんか？
+      .main__conteiner--chart
+        = pie_chart @chart
+
+  = render "records/footer"
