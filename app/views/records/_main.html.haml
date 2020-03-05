@@ -17,7 +17,7 @@
         = f.text_field :content
       .main__form--cost
         購入金額を入力してください。<br>
-        = f.number_field :cost
+        = f.number_field :cost, required:"required"
         円
 
       .container.text-center
@@ -43,7 +43,6 @@
             %th.record-month 購入月
             %th.record-text 購入したもの
             %th.record-cost 購入金額
-            -# %th{:colspan => "3"}
         %tbody
           -@records.each do |record|
             %tr

@@ -25,7 +25,6 @@
     width: 950px;
     height: 350px;
     color: black;
-    overflow: scroll;  
  }
 }
 
@@ -47,40 +46,6 @@
   width: 200px;
   height: 40px;
 }
-.submit-btn{
-  -webkit-appearance: none;
-  width: 100px;
-  height: 40px;
-  margin-top: 20px;
-  margin-left: 50px;
-  color:rgb(111, 111, 197);
-  background-color: #e6f2f5;
-  cursor: pointer;
-  border-radius: 5px; 
-}
-
-table{
-  border-collapse: collapse;
-  margin: 0 auto;
-  padding: 0;
-  width: 950px;
-  table-layout: fixed;
-}
-table tr {
-  background-color: #e6f2f5;
-  padding: .35em;
-  border-bottom: 2px solid #fff;
-}
-table th,
-table td {
-  padding: 8px;
-  border-right: 2px solid #fff;
-}
-table th {
-  font-size: .85em;
-  text-align: center;
-}
-
 .record-month, .record-text, .record-cost{
   background-color: rgb(223, 130, 9);
   color:#fff;
@@ -91,15 +56,9 @@ table th {
 .record-text {
   width: 280px;
 }
-.record-month {
-  text-align: right;
-  padding-right: 20px;
+.record-cost{
+  width: 200px;
 }
-.edit-btn,.delete-btn{
-  text-decoration: none;
-  color: rgb(111, 111, 197);
-}
-
 
 .record-footer{
   background-color: rgb(247, 163, 53);

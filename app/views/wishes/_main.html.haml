@@ -18,7 +18,7 @@
         = f.text_field :content
       .main__form--cost
         予定金額を入力してください。<br>
-        = f.text_field :cost
+        = f.number_field :cost, required:"required"
         円
       
       .container.text-center
