@@ -226,10 +226,10 @@ thead{
   color: white;
   text-decoration: none;
 }
-thead, tbody {
+thead.list, tbody.list{
   display: block;
 }
-tbody {
+tbody.list{
   overflow-x: hidden;
   overflow-y: scroll;
   height: 300px;

@@ -16,17 +16,16 @@
     .form-container__login--email
       = f.label :email
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", required:"required"
     .form-container__login--password
       = f.label :password
       %br/
-      = f.password_field :password, autocomplete: "current-password"
+      = f.password_field :password, autocomplete: "current-password", required:"required"
     .form-container__login--remember
     - if devise_mapping.rememberable?
     
       = f.check_box :remember_me
       = f.label :remember_me
-    -# .form-container__login--button
     = f.submit "Log in", class: 'login-btn'
   .form-container__link
   = render "users/shared/links"

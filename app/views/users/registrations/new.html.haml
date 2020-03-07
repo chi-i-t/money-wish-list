@@ -3,42 +3,40 @@
 .create-container
   .create-container__signup Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "users/shared/error_messages", resource: resource
+    -# = render "users/shared/error_messages", resource: resource
     .create-container__signup--name
       = f.label :お名前
       %br/
-      = f.text_field :name, autofocus: true
+      = f.text_field :name, autofocus: true, required:"required"
     .create-container__signup--email
       = f.label :email
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", required:"required"
     .create-container__signup--password
       = f.label :password
       - if @minimum_password_length
         %em
           (#{@minimum_password_length} 文字以上)
       %br/
-      = f.password_field :password, autocomplete: "new-password"
+      = f.password_field :password, autocomplete: "new-password", required:"required"
     .create-container__signup--password
       = f.label :password_confirmation
       %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
+      = f.password_field :password_confirmation, autocomplete: "new-password", required:"required"
     .create-container__signup--incomes
       = f.label :年収
       %br/
-      = f.number_field :incomes
-      -# = f.text_field :incomes, class: "numberbox"
+      = f.number_field :incomes, required:"required"
       円
-
     .create-container__signup--savings
       = f.label :１年間の目標貯蓄額
       %br/
-      = f.number_field :savings
+      = f.number_field :savings, required:"required"
       円
     .fixedcosts
       .create-container__signup--fixedcosts
         = f.label :１年間の固定費（生活費等）
-        = f.number_field :fixedcosts
+        = f.number_field :fixedcosts, required:"required"
         円
         = f.submit "Sign up", class: 'signup-btn'
        

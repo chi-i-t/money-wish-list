@@ -3,13 +3,17 @@ ja:
     attributes:
       user:
         current_password: "現在のパスワード"
-        email: "メールアドレス"
+        email: メールアドレス
+        name: "お名前"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
+        incomes: "年収"
+        savings: "１年間の目標貯蓄額"
+        fixedcosts: "１年間の固定費"
         remember_me: "ログインを記憶"
     models:
       user: "ユーザ"
-  devise:
+  users:
     confirmations:
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"
@@ -65,3 +69,11 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
+
+  
+  taken: "は既に使用されています。"
+  blank: "が入力されていません。"
+  too_short: "は%{count}文字以上に設定して下さい。"
+  too_long: "は%{count}文字以下に設定して下さい。"
+  invalid: "は有効でありません。"
+  confirmation: "が内容とあっていません。"

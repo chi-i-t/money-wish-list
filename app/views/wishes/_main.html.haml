@@ -39,13 +39,12 @@
   .main__lists
     .main__list
       %table
-        %thead
+        %thead.list
           %tr
             %th.head-month 予定月
             %th.head-text 欲しいもの
             %th.head-cost 予定金額
-            -# %th{:colspan => "3"}
-        %tbody
+        %tbody.list
           -@wishes.each do |wish|
             %tr
               %td.body-month= wish.month
