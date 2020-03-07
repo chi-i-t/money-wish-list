@@ -2,13 +2,12 @@
 
 .create-container
   %h2.create-container__edit アカウントを変更 
-  -# #{resource_name.to_s.humanize}
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = render "devise/shared/error_messages", resource: resource
+    -# = render "devise/shared/error_messages", resource: resource
     .create-container__edit--email
       = f.label :email
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", required:"required"
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %div
         Currently waiting confirmation for: #{resource.unconfirmed_email}
@@ -30,21 +29,21 @@
       = f.label :current_password
       %i （変更を確認するには現在のパスワードが必要です。）
       %br/
-      = f.password_field :current_password, autocomplete: "current-password"
+      = f.password_field :current_password, autocomplete: "current-password", required:"required"
     .create-container__edit--incomes
       = f.label :年収
       %br/
-      = f.number_field :incomes
+      = f.number_field :incomes, required:"required"
       円
     .create-container__signup--savings
       = f.label :１年間の目標貯蓄額
       %br/
-      = f.number_field :savings
+      = f.number_field :savings, required:"required"
       円
     .fixedcosts
       .create-container__signup--fixedcosts
         = f.label :１年間の固定費（生活費等）
-        = f.number_field :fixedcosts
+        = f.number_field :fixedcosts, required:"required"
         円
         = f.submit "Update", class:'update-btn'
       

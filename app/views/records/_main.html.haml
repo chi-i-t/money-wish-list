@@ -38,12 +38,12 @@
   .main__lists
     .main__list
       %table
-        %thead
+        %thead.list
           %tr
             %th.record-month 購入月
             %th.record-text 購入したもの
             %th.record-cost 購入金額
-        %tbody
+        %tbody.list
           -@records.each do |record|
             %tr
               %td.body-month= record.month
