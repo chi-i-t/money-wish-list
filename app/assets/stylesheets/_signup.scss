@@ -4,19 +4,19 @@
   padding-top: 80px;
   padding-left: 100px;
   &__title{
-    font-size: 2rem;
+    font-size: $largeFontSize;
     margin-bottom: 10px;
     letter-spacing: 0.1em;
   }
   &__subtitle{
-    font-size: 1.5rem;
+    font-size: $mediumFontSize;
     margin-bottom: 50px;
     padding-left: 30px;
   }
   &__message{
     padding-left: 20px;
     .list{
-      font-size: 1.5rem;
+      font-size: $mediumFontSize;
       padding-left: 40px;
     }
   }
@@ -24,10 +24,10 @@
 
 .create-container{
   width: 50%;
-  height: 100%;
+  height: 100vh;
   padding: 50px 0 0 50px;
   &__signup{
-  font-size: 2rem;
+  font-size: $largeFontSize;
   margin-bottom: 10px;
   letter-spacing: 0.1em; 
   }
@@ -45,64 +45,64 @@
   color: #a9a9a9;
 }
 .signup-btn{
-  -webkit-appearance: none;
   width: 150px;
   height: 40px;
   margin-left: 50px;
-  color:rgb(111, 111, 197);
-  background-color: #e6f2f5;
+  color:$btnFontColor;
+  background-color: $btnColor;
   cursor: pointer;
   border-radius: 5px; 
 }
 .signup-btn:hover{
-  background-color: #17a2b8;
-  color: white;
+  background-color: $btnhoverColor;
+  color: $whiteColor;
 }
 
 .login-btn{
   display: block;
   text-decoration: none;
   margin: 50px 0 0 100px;
-  color: rgb(111, 111, 197);
+  color: $btnFontColor;
 }
 
 
 // モーダル/average-------------
 .js-modal-open{
   text-decoration: none;
-  color: #6f6fc5;
+  color: $btnFontColor;
   line-height: 3rem;
 }
 .modal{
-  display: none;
+  width: 100%;
   height: 100vh;
+  display: none;
   position: fixed;
   top: 0;
-  width: 100%;
 }
 .modal__bg{
   background: rgba(0,0,0,0.8);
+  width: 100%;
   height: 100vh;
   position: absolute;
-  width: 100%;
 }
 .modal__content{
-  background: #fff;
+  background: $whiteColor;
+  width: 25%;
+  height: 80%;
   left: 25%;
   padding: 40px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 25%;
-  height: 80%;
+  color: $blackColor;
 }
 #close{
-  color: #6f6fc5;
-  text-decoration: none;
-  border: 1px solid #6f6fc5;
-  display: inline-block;
+  color: $btnFontColor;
   height: 40px;
   width: 60px;
+  text-decoration: none;
+  border: 1px solid $btnFontColor;
+  display: inline-block;
   line-height: 40px;
   text-align: center;
   margin-top: 50px;
@@ -124,7 +124,7 @@
 // モーダル/calculator----------
 .js-modal-calculator-open{
   text-decoration: none;
-  color: #6f6fc5;
+  color: $btnFontColor;
   line-height: 3rem;
 }
 .calculator-form{
@@ -140,8 +140,9 @@
   height: 100%;
   text-align: right;
   padding: 8px;
-  font-size: 1.5rem;
+  font-size: $mediumFontSize;
 }
 .btn-container{
   display: flex;
 }
+

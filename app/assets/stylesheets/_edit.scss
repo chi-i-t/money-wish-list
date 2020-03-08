@@ -1,5 +1,5 @@
 .create-container__edit{
-  font-size: 1.5rem;
+  font-size: $mediumFontSize;
   margin-bottom: 10px;
   letter-spacing: 0.1em; 
 }
@@ -10,44 +10,39 @@
 }
 
 .update-btn {
-  -webkit-appearance: none;
   width: 150px;
   height: 40px;
   margin-top: 20px;
   margin-left: 50px;
-  color: rgb(111, 111, 197);
-  background-color: #e6f2f5;
+  color: $btnFontColor;
+  background-color: $btnColor;
   cursor: pointer;
   border-radius: 5px;
 }
 .update-btn:hover{
-  background-color: #17a2b8;
-  color: white;
-}
-.action {
-  display: flex;
+  background-color: $btnhoverColor;
+  color: $whiteColor;
 }
 .back {
-  color: rgb(111, 111, 197);
+  color: $btnFontColor;
   margin-top: 20px;
   margin-left: 100px;
   text-decoration: none;
 }
 .cancel {
   margin-left: 200px;
-  color: rgb(111, 111, 197);
+  color: $btnFontColor;
 }
 .draw-btn{
-  -webkit-appearance: none;
   width: 100px;
   height: 30px;
-  color: rgb(111, 111, 197);
-  background-color: #e6f2f5;
+  color: $btnFontColor;
+  background-color: $btnColor;
   margin-left: 50px;
   cursor: pointer;
   border-radius: 5px;
 }
 .draw-btn:hover{
-  background-color: #17a2b8;
-  color: white;
+  background-color: $btnhoverColor;
+  color: $whiteColor;
 }
