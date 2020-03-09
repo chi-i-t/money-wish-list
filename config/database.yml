@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: money-wish-list_production
-  username: money-wish-list
-  password: <%= ENV['MONEY-WISH-LIST_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
