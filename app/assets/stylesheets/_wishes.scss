@@ -8,13 +8,13 @@ header.header{
 }
 .header__title{
   margin-left: 100px;
-  line-height: 80px;
+  line-height: 70px;
   font-size: $largeFontSize;
   float: left;
 }
 .header__right{
   float: right;
-  line-height: 80px;
+  line-height: 70px;
   margin-right: 100px;
   &--btn{
     padding-left: 20px;
@@ -33,7 +33,7 @@ header.header{
   width: 20%;
   height: calc(100vh - 80px);
   position: absolute;
-  top: 10%;
+  top: 80px;
   border-right: 1px solid #d3d3d3;
   &__list{
    padding: 50px;
