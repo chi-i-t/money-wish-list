@@ -10,6 +10,7 @@
     %link{href: "https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700", rel: "stylesheet"}/
   %body
     %header.header
+      = render 'layouts/notifications'
       .header__title Money Wish List
       .header__right
         = link_to_unless_current "Wish List", wishes_path, class: "header__right--btn"
